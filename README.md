@@ -1,0 +1,1 @@
+RentZone is a full-stack web application that enables users to rent products online and shop owners to manage their inventory with ease. Built using the MERN stack (MongoDB, Express.js, React, Node.js), it provides a seamless experience for both renters and vendors.
