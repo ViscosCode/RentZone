@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding-top: 20px;
+}
+
+/* Categories Section (Below Navbar) */
+.categories-bar {
+  max-width: 1200px;
+  margin: 80px auto 20px;
+  padding: 0 20px;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Category Button Styling */
+.category-btn {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn:hover {
+  background-color: #ff6200;
+  color: #ffffff;
+  border-color: #ff6200;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #1e3a8a;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.banner-content {
+  padding: 40px;
+  flex: 1;
+}
+
+.banner-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.banner-content h1 span {
+  color: #ff6200;
+}
+
+.banner-content h2 {
+  font-size: 24px;
+}
+
+.banner-content h2 span {
+  color: #ff6200;
+}
+
+.banner-image {
+  flex: 1;
+  background: url('/shark-tank-bg.jpg') center/cover no-repeat; /* Replace with actual background image */
+  min-height: 300px;
+}
+
+.banner-sidebar {
+  background-color: #3b82f6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner-sidebar ul {
+  list-style: none;
+}
+
+.banner-sidebar ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.take-off-btn {
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.take-off-btn:hover {
+  background-color: #e55a00;
+}
+
+/* Top Rented Categories */
+.top-categories {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.top-categories h2 {
+  color: #ff6200;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.category-card .image-placeholder {
+  height: 80px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.new-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.all-categories-btn {
+  display: block;
+  margin: 20px auto;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.all-categories-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Chat Button */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-button:hover {
+  background-color: #45a049;
+}
+
+.chat-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 600px;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-text {
+  width: 70%;
+  height: 80%;
+  margin-left:150px;
+  margin-top:60px;
+  background-image: url('../assets/partener-rentit4me.svg');
+  background-color: #c19a38;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.popup-text h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.popup-text p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.register-btn,
+.login-btn {
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover,
+.login-btn:hover {
+  background-color: #e55a00;
+}
+
+/* Sign-Up Form Styles */
+.signup-form-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.side-image {
+  flex: 1;
+  min-height: 100%;
+}
+
+.signup-form {
+  flex: 1;
+  background-color: #fff;
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-form h2 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  color: #1e3a8a;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 9px 12px;
+  margin: 5px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.signup-form input::placeholder,
+.signup-form select {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.phone-input {
+  display: flex;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.phone-input select {
+  width: 30%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.phone-input input {
+  width: 70%;
+}
+
+.signup-form input[type="password"] {
+  position: relative;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.form-footer label {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
+  color: #ff6200;
+  cursor: pointer;
+}
+
+.form-footer input[type="checkbox"] {
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
+  accent-color: #ff6200;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.partner-btn,
+.login-btn {
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  padding: 9px 28px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.partner-btn:hover,
+.login-btn:hover {
+  background-color: #e55a00;
+}
+
+/* Login Form Styles */
+.login-form-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.login-form {
+  flex: 1;
+  background-color: #fff;
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h2 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  color: #1e3a8a;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 9px 12px;
+  margin: 5px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.login-form input::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.login-form .form-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.login-submit-btn {
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  padding: 9px 28px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.login-submit-btn:hover {
+  background-color: #e55a00;
+}
+
+/* Category Dropdown Styles */
+.category-item {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0); /* Start scaled down for animation */
+  transform-origin: top; /* Animation origin at the top */
+  background: linear-gradient(145deg, #ffffff, #f7f7f7); /* Subtle gradient */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
+  list-style: none;
+  padding: 10px 0;
+  margin: 8px 0 0 0;
+  min-width: 220px;
+  max-height: 300px; /* Prevent overflow on smaller screens */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  z-index: 30; /* Ensure it appears above other elements */
+  opacity: 0; /* Start invisible for animation */
+  visibility: hidden; /* Hide initially */
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Smooth animation */
+}
+
+/* Show dropdown with animation on hover */
+.category-item:hover .dropdown-menu {
+  transform: translateX(-50%) scaleY(1); /* Scale up to full size */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #ff6200;
+  border-radius: 10px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #e55a00;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #ff6200;
+  color: #ffffff;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ff6200;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ff6200;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  margin: 0;
+}

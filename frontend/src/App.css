@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6200;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+  color: #e55a00;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ff6200;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #ff6200;
+  font-weight: 600;
+  border-bottom: 2px solid #ff6200;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.nav-user .avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #e5e7eb;
+  border-radius: 50%;
+  border: 2px solid #ff6200;
+}
+
+/* Main Content */
+.app-content {
+  padding: 40px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Partner Form Popup Styles */
+.partner-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.partner-form-content {
+  position: relative;
+  width: 90%;
+  max-width: 350px; /* Further reduced from 400px to make the popup smaller */
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 15px; /* Reduced padding from 20px for a more compact look */
+  max-height: 60vh; /* Further reduced height from 70vh */
+  overflow-y: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.partner-form-close-btn {
+  position: absolute;
+  top: 8px; /* Adjusted for smaller padding */
+  right: 8px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 18px; /* Further reduced from 20px */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.partner-form-close-btn:hover {
+  color: #ff6200;
+  transform: rotate(90deg);
+}
+
+.partner-form h2 {
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  font-size: 20px; /* Reduced from 24px to fit smaller popup */
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 15px; /* Reduced margin */
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.partner-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Further reduced from 15px */
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Reduced from 6px */
+}
+
+.form-row label {
+  font-size: 13px; /* Slightly reduced font size */
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-row label::after {
+  content: '*';
+  color: #ef4444;
+  font-size: 11px; /* Adjusted to match smaller label */
+}
+
+.form-row input {
+  width: 100%;
+  padding: 6px 10px; /* Reduced padding for smaller inputs */
+  border: 2px solid #e5e7eb;
+  border-radius: 5px; /* Slightly smaller border radius */
+  font-size: 13px; /* Reduced font size */
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #374151;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.form-row input:focus {
+  border-color: #ff6200;
+  box-shadow: 0 0 0 2px rgba(255, 98, 0, 0.1); /* Reduced shadow spread */
+  outline: none;
+  transform: scale(1.01);
+}
+
+.form-row input:hover {
+  border-color: #d1d5db;
+}
+
+.form-error {
+  color: #ef4444;
+  font-size: 12px; /* Reduced font size */
+  text-align: center;
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+.partner-submit-btn {
+  background-color: #ff6200;
+  color: #ffffff;
+  border: none;
+  padding: 8px 25px; /* Reduced padding for a smaller button */
+  border-radius: 5px; /* Slightly smaller border radius */
+  cursor: pointer;
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  font-size: 13px; /* Reduced font size */
+  font-weight: 600;
+  margin-top: 10px; /* Reduced margin */
+  align-self: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255, 98, 0, 0.2); /* Reduced shadow */
+}
+
+.partner-submit-btn:hover {
+  background-color: #e55a00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 98, 0, 0.3);
+}
+
+.partner-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(255, 98, 0, 0.2);
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 40px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ff6200;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #d1d5db;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #ff6200;
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  font-size: 14px;
+  color: #d1d5db;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ff6200;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background-color: #1e2a78;
+  padding: 15px 50px;
+  text-align: center;
+  color: #d1d5db;
+  font-size: 14px;
+  border-top: 1px solid #374151;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
